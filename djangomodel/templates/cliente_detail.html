@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1>{{ cliente.nombre }}</h1>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Dirección: {{ cliente.direccion }}</p>
+      <p class="card-text">Ciudad: {{ cliente.ciudad }}</p>
+      <p class="card-text">País: {{ cliente.pais }}</p>
+      <a href="{% url 'cliente_list' %}" class="btn btn-primary">Volver a Clientes</a>
+    </div>
+  </div>
+{% endblock %}

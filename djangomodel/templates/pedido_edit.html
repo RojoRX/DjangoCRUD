@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h2>Nuevo Pedido</h2>
+<form method="POST" class="post-form">
+  <div class="mb-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+  </div>
+  <button type="submit" class="save btn btn-primary btn-default">Guardar</button>
+</form>
+
+{% endblock %}
+

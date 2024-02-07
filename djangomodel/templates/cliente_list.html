@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container col-12 mt-2">
+  <table class="table table-dark table-striped table-hover table-success">
+    <thead class="table-success">
+      <h1 class="text-center">Lista de Clientes</h1>
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cliente in clientes %}
+      <tr>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.direccion }}</td>
+        <td>{{ cliente.ciudad }}</td>
+        <td>{{ cliente.pais }}</td>
+        <td>
+          <a href="{% url 'cliente_detail' pk=cliente.pk %}">Ver Detalles</a> |
+          <a href="{% url 'cliente_edit' pk=cliente.pk %}">Editar</a> |
+          <a href="{% url 'cliente_delete' pk=cliente.pk %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

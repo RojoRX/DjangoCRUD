@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h1>{{ pedido.cliente.nombre }} - {{ pedido.producto.nombre }}</h1>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Fecha de Creación: {{ pedido.fecha_creacion }}</h5>
+      <p class="card-text">Cantidad: {{ pedido.cantidad }}</p>
+      <p class="card-text">Estado: {{ pedido.estado }}</p>
+      <a href="{% url 'pedido_list' %}" class="btn btn-primary">Volver a Pedidos</a>
+    </div>
+  </div>
+
+{% endblock %}
